@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col">
+        <% if current_user.admin? %>
+          <%= link_to 'Delete Account', account_path(params[:id]), method: :delete, class: 'btn btn-danger btn-sm' %>
+        <% end %>
+        <p>Account:</p>
+        <h1><%= @account.business_name %></h1>
+      </div>
+    </div>
+  </div>
+</div>

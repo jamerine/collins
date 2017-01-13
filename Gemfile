@@ -35,9 +35,30 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use bootstrap for styling
+gem 'bootstrap', '~> 4.0.0.alpha6'
+
+# Use for bootstrap
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
+gem 'pry'
+
+gem 'nokogiri'
+
+gem 'devise'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'pry-rails'
+  gem 'factory_girl'
+  # Use for test classes
+  gem 'rspec-rails', '~> 3.5'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'poltergeist', '1.6.0'
 end
 
 group :development do
@@ -47,6 +68,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'capistrano', '~> 3.0'
+  gem 'capistrano-bundler', '1.1.4'
+  gem 'capistrano-rails', '1.1.3'
+  gem 'capistrano-chruby'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

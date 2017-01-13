@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="row justify-content-md-center">
+      <div class="col col-md-auto">
+        <h1 class="display-3">Welcome to Collins!</h1>
+        <hr class="my-4">
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col col-md-auto">
+        <% if current_user %>
+          <%= link_to 'View Account', account_path(current_user.account_id), class: 'btn btn-outline-primary' %>
+        <% else %>
+          <%= link_to 'Sign Up', new_account_path, class: 'btn btn-outline-info' %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
