@@ -20,6 +20,7 @@ class AccountsController < ApplicationController
 
   def show
     @account = Account.find(params[:id])
+    @users = @account.users
   end
 
   def destroy
@@ -37,4 +38,6 @@ class AccountsController < ApplicationController
     { users_attributes: [:first_name, :last_name, :email, :password, :password_confirmation, :admin ] }
     )
   end
+
+
 end

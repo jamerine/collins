@@ -4,6 +4,7 @@ require "rails_helper"
         visit root_path
         click_link "Sign Up"
         fill_in "Business name", with: "Test"
+        fill_in "Subdomain", with: "test"
         fill_in "First name", with: "First"
         fill_in "Last name", with: "Last"
         fill_in "Email", with: "test@example.com"
