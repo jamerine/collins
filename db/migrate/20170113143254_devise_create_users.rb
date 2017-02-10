@@ -32,6 +32,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
 
       t.string :first_name, null: false
       t.string :last_name, null: false
+      t.boolean :admin
+
       t.references :account, index: true, foreign_key: true
 
       t.timestamps null: false

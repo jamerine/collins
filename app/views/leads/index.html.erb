@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>All Business Leads</h1>
+  <br>
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Entity Number</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Filing Date</th>
+      <th>Expiry Date</th>
+      <th>Status</th>
+      <th>Business Location</th>
+      <th>County</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @leads.order(:original_filing_date).each do |lead| %>
+    <tr>
+      <th> <%= lead.entity_number %> </th>
+      <td> <%= lead.business_name %></td>
+      <td> <%= lead.business_type %></td>
+      <td> <%= lead.original_filing_date %></td>
+      <td> <%= lead.expiry_date %></td>
+      <td> <%= lead.status %></td>
+      <td> <%= lead.business_location %></td>
+      <td> <%= lead.county %></td>
+      <td> <%= lead.state %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

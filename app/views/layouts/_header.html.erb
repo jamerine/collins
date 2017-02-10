@@ -1,21 +1,22 @@
-<nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-primary">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <h1 class="navbar-brand mb-0 navbar-white">Collins</h1>
+  <%= link_to '', root_path, class: 'navbar-brand' %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <% if current_user %>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to 'Account', account_path(current_user.account), class: 'nav-link' %>
+        <%= link_to 'Account', account_path(current_user.account_id), class: 'nav-link' %>
       </li>
       <li class="nav-item">
+        <%= link_to 'Leads', leads_path, class: 'nav-link' %>
       </li>
+
     </ul>
-      <%= link_to 'Sign Out', destroy_user_session_path, class: 'btn btn-outline-danger', method: :delete %>
 
-
+    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-secondary' %>
     <% else %>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -26,6 +27,7 @@
       </li>
     </ul>
       <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-success' %>
+
     <% end %>
   </div>
 </nav>

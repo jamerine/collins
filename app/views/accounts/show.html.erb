@@ -1,17 +1,31 @@
 <div class="container">
-  <div class="jumbotron">
-    <div class="row">
-      <div class="col">
-        <% if current_user.admin? %>
-          <%= link_to 'Delete Account', account_path(params[:id]), method: :delete, class: 'btn btn-danger btn-sm' %>
-        <% end %>
+    <div class="row text-center">
+      <div class="col col-md-4">
         <p>Account:</p>
-        <h1><%= @account.business_name %></h1>
+        <h1><%= @account.business_name.titleize %></h1>
+      </div>
+      <div class="col col-md-4">
+        <p>Industry Type:</p>
+        <h1><%= @account.industry_type.titleize %></h1>
+      </div>
+      <div class="col col-md-4">
+        <p>Employees:</p>
+        <h1><%= @account.total_employees %></h1>
       </div>
     </div>
-  </div>
 </div>
 
+<br>
 <div class="container">
-
+  <div class="row justify-content-md-center">
+      <%= link_to 'Add User', new_account_user_path(id: @account.id), class: 'btn btn-outline-success btn-sm' %>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-8">
+      <%= render partial: 'account/users/users', locals: { users: @users } %>
+    </div>
+  </div>
 </div>
