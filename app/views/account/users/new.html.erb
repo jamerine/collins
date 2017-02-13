@@ -1,42 +1,57 @@
 <div class="container">
-  <div class='col-md-4'>
-    <%= form_for User.new, url: account_create_user_path(account_id: @account.id) do |f| %>
-      <div class="form-group">
-        <%= f.label :first_name %><br />
-        <%= f.text_field :first_name, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :last_name %><br />
-        <%= f.text_field :last_name, class: 'form-control' %>
-      </div>
+  <div class="row">
+    <div class="col-md-4">
+      <%= link_to 'Back', account_path(@account), class: 'btn btn-primary' %>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class='col-md-6'>
+      <div class="card">
+        <div class="card-header">
+          Add User
+        </div>
+        <div class="card-block">
+          <%= form_for User.new, url: account_create_user_path(account_id: @account.id) do |f| %>
+            <div class="form-group">
+              <%= f.label :first_name %><br />
+              <%= f.text_field :first_name, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :last_name %><br />
+              <%= f.text_field :last_name, class: 'form-control' %>
+            </div>
 
-      <div class="form-group">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-      </div>
+            <div class="form-group">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+            </div>
 
-      <div class="form-group">
-        <%= f.label :password %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-      </div>
+            <div class="form-group">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+            </div>
 
-      <div class="form-group">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-      </div>
+            <div class="form-group">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+            </div>
 
 
-      <div class="form-group">
-        <%= f.label :admin %><br />
-        <%= f.check_box :admin, class: 'form-control' %>
-      </div>
-      <br>
-      <div class="actions">
-        <%= f.submit "Create", class: 'btn btn-outline-success' %>
-      </div>
-    <% end %>
+            <div class="form-group">
+              <%= f.label :admin %><br />
+              <%= f.check_box :admin, class: 'form-control' %>
+            </div>
+            <br>
+            <div class="actions">
+              <%= f.submit "Create", class: 'btn btn-outline-success' %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+    </div>
   </div>
 </div>
